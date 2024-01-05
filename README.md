@@ -20,26 +20,28 @@ The concepts of fail-fast service calls, bulkheads and fallbacks for when a clie
 
 - 1. Client-side load balancing
 
-  - The service client caches microservice endpoints retrieved during service discovery.
+   - The service client caches microservice endpoints retrieved during service discovery.
 
 - 2. Circuit breakers
 
-  - The circuit breaker pattern ensures that a service client does not repeatedly call a failing service.
+   - The circuit breaker pattern ensures that a service client does not repeatedly call a failing service.
 
 - 3. Fallbacks
 
-  - When a call does fail, fallback asks if there’s an alternative that can be executed.
+   - When a call does fail, fallback asks if there’s an alternative that can be executed.
 
 - 4. Bulkheads
 
-  - The bulkhead segregates different service calls on the service client to ensure a poor-behaving service does not use all
+   - The bulkhead segregates different service calls on the service client to ensure a poor-behaving service does not use all
     the resources on the client.
+
 
 - The four client resiliency patterns act as a protective buffer between a service consumer and the service.
 
 
 
 ### Software needed
+
 1.	Apache Maven (http://maven.apache.org)
 2.	Docker (http://docker.com)
 3.	Git Client (http://git-scm.com)
@@ -47,12 +49,16 @@ The concepts of fail-fast service calls, bulkheads and fallbacks for when a clie
 
 ### Building the Docker Images
 
+
 Run the following maven command.  
+
 
    **mvn clean package docker:build**
 
 
-#### Running the services
+
+### Running the services
+
 
 
    **docker-compose -f docker/common/docker-compose.yml up**
